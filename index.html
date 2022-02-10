@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+          
+        }
+        body{
+          
+            scroll-behavior: smooth;
+            
+        }
+        #fir{
+            background-color: chartreuse;
+        }
+        #fir h3{
+            
+            animation-name: name;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 1s;
+            animation-timing-function: ease-out;
+            overflow: hidden;
+        }
+        @keyframes name
+        {
+            from{
+                transform: translateY(-30rem);
+            }
+            To{
+                transform: translateY(0);
+            }
+        }
+        
+        #sec
+        {
+            background-color: tomato;
+        }
+        #third
+        {
+            background-color: thistle;
+        }
+        #fourth
+        {
+            background-color: turquoise;
+        }
+      /* TO REMOVE SCROLLBAR NEW COMMAND MADE BY ME OR FIND BY ME O LOVE ME*/
+        ::-webkit-scrollbar{
+            width: 0em;
+            /* background:linear-gradient(red,blue);  for multi colour */
+        }
+       
+       
+       #fir p
+        {
+            animation-name: names;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 1s;
+            animation-timing-function: ease-out;
+        }
+        @keyframes names
+        {
+            from{
+                transform: translateX(-30rem);
+            }
+            To{
+                transform: translateX(center);
+            }
+        }
+        #sec p
+        {
+            animation-name: namew;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 1s;
+            animation-timing-function: ease-out;
+        }
+        @keyframes namew
+        {
+            from{
+                transform: translateX(-30rem);
+            }
+            To{
+                transform: translateX(center);
+            }
+        }
+        .page{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+         
+        }
+         h3{
+            font-size: 5rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 1rem;
+        }
+         p{
+            font-size: 3rem;
+            font-family:'Times New Roman', Times, serif;    
+            padding: 1rem;   
+           
+            margin-left: 3rem;
+            margin-right: 3rem;
+            margin-top: 1rem;
+            margin-bottom: 3rem;    
+        }
+        .btn
+        {
+           padding: 1rem 3rem;
+           background-color: rgb(104, 101, 101);
+           text-decoration: none;
+           font-size:24px;
+           color: whitesmoke;  
+           transition: all;
+           transition-duration: .5s;
+           transition-timing-function: ease-in-out;
+           margin-right: 1rem;       
+               }
+            .btn:hover
+            {
+                background-color: slategrey;
+                padding: 1rem 4rem;
+            }
+    </style>
+</head>
+<body>
+    <section id="fir" class="page"> <!--use to move to another section of website-->
+        <h3>
+            FIRST PAGE
+        </h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sunt laudantium ad natus quam consectetur quibusdam!
+        </p>
+        <div>
+            <a href="#sec" class="btn">Next</a>
+        </div>
+    </section>
+
+
+    <section id="sec" class="page">
+        <h3>
+            SECOND PAGE
+        </h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sunt laudantium ad natus quam consectetur quibusdam!
+        </p>
+        <div>
+            <a href="#fir" class="btn">Previous</a>
+            <a href="#third" class="btn">Next</a>
+          
+        </div>
+    </section>
+
+    <section id="third" class="page">
+        <h3>
+            THIRD PAGE
+        </h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sunt laudantium ad natus quam consectetur quibusdam!
+        </p>
+        <div>
+            <a href="#sec" class="btn">Previous</a>
+            <a href="#fourth" class="btn">Next</a>
+          
+        </div>
+    </section>
+
+    <section id="fourth" class="page">
+        <h3>
+            FOURTH PAGE
+        </h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sunt laudantium ad natus quam consectetur quibusdam!
+        </p>
+        <div>
+            <a href="#third" class="btn">Previous</a>
+                     
+        </div>
+    </section>
+    <!--SCROLLING EFFECT-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+
+    </script>
+    <script>
+        // Smooth Scrolling
+        $('.btn').on('click', function(event) {
+            if (this.hash !== '') {
+              event.preventDefault();
+              const hash = this.hash;
+              $('html, body').animate(
+                {
+                  scrollTop: $(hash).offset().top
+                },
+                800
+              );
+            }
+          });
+      </script>
+</body>
+</html>
